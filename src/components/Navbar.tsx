@@ -28,7 +28,12 @@ const Navbar = () => {
     <div className="navbar bg-white py-2 px-5">
       <div className="flex-1">
         <Link href="/events" className="btn btn-ghost text-xl">
-          <Image src={"/icons/SiAnimeLogo.png"} height={50} width={50} />
+          <Image
+            src={"/icons/SiAnimeLogo.png"}
+            height={50}
+            width={50}
+            alt="logo"
+          />
         </Link>
       </div>
       <div className="flex-none">

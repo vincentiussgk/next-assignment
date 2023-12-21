@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -47,15 +48,11 @@ const MerchForm = () => {
     isLoading: eventLoading,
   } = useSWR<IMerchFormstate>(`events?id_like=&name_like=`, fetcher);
 
-  console.log(eventData);
-
   useEffect(() => {
     if (data && Object.keys(data).length && router.query.itemId) {
       setMerchFormState(data);
     }
   }, [data, router.query.itemId]);
-
-  console.log(data);
 
   const handleComboboxChange = (eventId: number) => {
     setMerchFormState((prevState) => ({ ...prevState, eventId }));

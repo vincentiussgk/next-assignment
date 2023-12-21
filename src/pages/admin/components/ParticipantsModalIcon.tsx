@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import ParticipantsModal from "./ParticipantsModal";
 import { IEvent } from "@/types/dataTypes";

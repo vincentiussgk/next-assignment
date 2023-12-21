@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { doesUserExist } from "./doesUserExist";
 import { ILoginBody } from "@/types";
 

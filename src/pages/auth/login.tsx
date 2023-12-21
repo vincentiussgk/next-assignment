@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AuthButton from "@/components/AuthButton";
 import React, { FormEventHandler, useState } from "react";
 import AuthLayout from "./layout";

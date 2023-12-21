@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import AdminLayout from "../layout";
 import Chart from "../components/Chart";

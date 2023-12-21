@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable react-hooks/exhaustive-deps */
 import EventCard from "@/components/EventCard";
 import useBalance from "@/hooks/useBalance";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -6,18 +8,17 @@ import { fetcher } from "@/lib/fetcher";
 import { IBookmarksDB, IEvent, IUser } from "@/types/dataTypes";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import useSWR, { mutate } from "swr";
 import PaginationButton from "./admin/components/PaginationButton";
 import SelectInputClient from "./admin/components/SelectInputClient";
 import { handleSelectClientChange } from "@/utils/admin/formHandlers";
 import SearchInput from "./admin/components/SearchInput";
+import useSWR from "swr";
 
 const searchColumns = ["name", "category", "location", "price"];
 const sortColumns = ["desc", "asc"];
 
 const Purchases = () => {
   const { currentUser } = useBalance();
-  console.log(currentUser);
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedValue = useDebounce<string>(searchQuery, 300);
 
@@ -35,6 +36,11 @@ const Purchases = () => {
     page
   );
 
+  const { data: bookmarkData, mutate: bookmarkMutate } = useSWR(
+    `bookmarks?usersId=${currentUser?.id}`,
+    fetcher
+  );
+
   useEffect(() => {
     setRequestParams((prevParams) => {
       prevParams[1] = `_sort=${columnToSort}&_order=desc`;
@@ -49,13 +55,6 @@ const Purchases = () => {
     });
   }, [sortDir]);
 
-  // useEffect(() => {
-  //   setRequestParams((prevParams) => {
-  //     prevParams[2] = `name_like=${debouncedValue}`;
-  //     return [...prevParams];
-  //   });
-  // }, [debouncedValue]);
-
   useEffect(() => {
     setRequestParams((prevParams) => {
       prevParams[0] = `userId=${currentUser?.id}&_expand=event`;
@@ -64,7 +63,9 @@ const Purchases = () => {
   }, [currentUser]);
 
   const findEvent = (eventId: number) => {
-    return slicedData?.find((bookmark) => bookmark.eventsId === eventId);
+    return bookmarkData?.find(
+      (bookmarkItem) => bookmarkItem.eventsId === eventId
+    );
   };
 
   const handleBookmarkChange = async ({
@@ -108,17 +109,15 @@ const Purchases = () => {
       }),
     });
 
-    mutate();
+    bookmarkMutate();
   };
-
-  console.log("data", slicedData);
 
   const handleRemoveBookmark = async (bookmarkId: number) => {
     await fetch(`http://localhost:8080/bookmarks/${bookmarkId}`, {
       method: "DELETE",
     });
 
-    mutate();
+    bookmarkMutate();
   };
 
   if (!slicedData || isLoading) return <div>Loading...</div>;

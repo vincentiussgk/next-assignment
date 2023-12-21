@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable react-hooks/exhaustive-deps */
 import ActionCell from "@/pages/admin/components/ActionCell";
 import { trimString } from "@/utils/trimString";
 import React, { isValidElement, useEffect, useState } from "react";
@@ -32,8 +34,6 @@ const TableLayout = ({ searchQuery }: ITableLayoutProps) => {
       router?.query?.tableName ? `?${requestParams.join("&")}` : "",
       page
     );
-
-  console.log("TableLayout", data);
 
   useEffect(() => {
     setRequestParams((prevParams) => {

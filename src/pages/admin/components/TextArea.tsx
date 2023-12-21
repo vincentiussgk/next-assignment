@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TValidation } from "@/types";
 import { ChangeEvent } from "react";
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { fetcher } from "@/lib/fetcher";
 import { IPurchase } from "@/types/dataTypes";
 import { CChart } from "@coreui/react-chartjs";

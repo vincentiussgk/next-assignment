@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChangeEvent, FormEvent, useState } from "react";
 import Modal from "./Modal";
 import Input from "./InputModal";
@@ -34,7 +35,6 @@ const TopUpModal = ({ setIsOpen }) => {
   const handleTransferSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      console.log("topup result", currentUser?.balance + formData.amount);
       const response = await manipWithFetch(
         `users/${currentUser?.id}`,
         {

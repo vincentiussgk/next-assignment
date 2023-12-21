@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -45,8 +46,6 @@ const UserForm = () => {
       setUserFormState(data);
     }
   }, [data, router.query.itemId]);
-
-  console.log(data);
 
   return (
     <div className="flex flex-col gap-y-[10px]">

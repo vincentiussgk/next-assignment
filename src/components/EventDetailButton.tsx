@@ -2,7 +2,7 @@ import useBalance from "@/hooks/useBalance";
 import { manipWithFetch } from "@/lib/fetch";
 import { fetcher } from "@/lib/fetcher";
 import Spinner from "@/pages/admin/components/Spinner";
-import { IEvent } from "@/types/dataTypes";
+import { IEvent, IPurchase } from "@/types/dataTypes";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -19,7 +19,7 @@ const EventDetailButton = ({ eventData }: IEventDetailButtonProps) => {
 
   const { currentUser } = useBalance();
 
-  const { data } = useSWR<IEvent[]>(
+  const { data } = useSWR<IPurchase[]>(
     `purchases?eventId=${router.query.eventId}&userId=${currentUser?.id}`,
     fetcher
   );
@@ -30,14 +30,14 @@ const EventDetailButton = ({ eventData }: IEventDetailButtonProps) => {
       await manipWithFetch(
         `events/${router.query.eventId}`,
         {
-          current: parseInt(eventData?.current) + 1,
+          current: parseInt(eventData?.current.toString()) + 1,
         },
         "PATCH"
       );
 
       await manipWithFetch(`purchases`, {
-        userId: parseInt(currentUser?.id),
-        eventId: parseInt(router.query.eventId),
+        userId: parseInt(currentUser?.id?.toString() ?? "0"),
+        eventId: parseInt(router.query.eventId?.toString() ?? "0"),
         paymentStatus: false,
       });
       toast.success("Event successfully booked!", {
@@ -45,7 +45,8 @@ const EventDetailButton = ({ eventData }: IEventDetailButtonProps) => {
         autoClose: 3000,
       });
     } catch (err) {
-      toast.error(err.message, {
+      const error = err as Error;
+      toast.error(error.message, {
         position: "top-center",
         autoClose: 3000,
       });
@@ -59,7 +60,7 @@ const EventDetailButton = ({ eventData }: IEventDetailButtonProps) => {
   }
 
   if (data && data.length > 0) {
-    if (data[0].paymentStatus) {
+    if (data[0]?.paymentStatus) {
       return <button className={`btn disabled`}>Event Booked</button>;
     }
 

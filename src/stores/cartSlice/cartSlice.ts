@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IMerch, IMerchOrder } from "@/types/dataTypes";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";

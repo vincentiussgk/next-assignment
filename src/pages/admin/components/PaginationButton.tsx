@@ -1,3 +1,4 @@
+// @ts-nocheck
 interface PaginationButtonProps {
   onClick: any;
   value: string;

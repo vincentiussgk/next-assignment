@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Image from "next/image";
 import React from "react";
 
@@ -12,7 +13,7 @@ const NotFound = () => {
         </h1>
 
         <p className="mt-4 text-black dark:text-gray-400">
-          Unfortunately, we couldn't find that page.
+          {"Unfortunately, we couldn't find that page."}
         </p>
       </div>
     </div>

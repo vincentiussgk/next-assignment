@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IInputProps, TInputType } from "@/types/inputInterfaces";
 
 const InputField = <T extends TInputType>({

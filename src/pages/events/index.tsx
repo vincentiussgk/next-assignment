@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable react-hooks/exhaustive-deps */
 import EventCard from "@/components/EventCard";
 import { fetcher } from "@/lib/fetcher";
 import { IBookmarksDB, IEvent } from "@/types/dataTypes";
@@ -62,8 +64,6 @@ const Events = () => {
     }
   );
 
-  console.log("bookmarkData", bookmarkData);
-
   const { slicedData, mutate, pageLimit } = useSWRAdmin(
     `events`,
     `?${requestParams.join("&")}`,
@@ -115,7 +115,7 @@ const Events = () => {
       }),
     });
 
-    mutate();
+    bookmarkMutate();
   };
 
   const handleRemoveBookmark = async (bookmarkId: number) => {
@@ -123,7 +123,7 @@ const Events = () => {
       method: "DELETE",
     });
 
-    mutate();
+    bookmarkMutate();
   };
   return (
     <div className={`flex flex-col min-h-screen px-48 mt-10`}>

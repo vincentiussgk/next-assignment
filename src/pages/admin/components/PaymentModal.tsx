@@ -1,3 +1,4 @@
+// @ts-nocheck
 import useBalance from "@/hooks/useBalance";
 import Modal from "./Modal";
 

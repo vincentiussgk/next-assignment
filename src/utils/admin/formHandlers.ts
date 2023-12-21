@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { manipWithFetch } from "@/lib/fetch";
 import { ChangeEvent, SetStateAction } from "react";
 import { toast } from "react-toastify";

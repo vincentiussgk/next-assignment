@@ -73,6 +73,19 @@
       "desc": "32",
       "id": 3,
       "date": "2000-01-01T22:20"
+    },
+    {
+      "name": "New event",
+      "date": "2002-12-10T22:20",
+      "location": "Hello",
+      "duration": "12",
+      "category": "3",
+      "price": "20000",
+      "image": "http://res.cloudinary.com/dp9xqtibm/image/upload/v1703173550/jeog1rymtxklu3hc0jkb.jpg",
+      "description": "This is an event",
+      "capacity": "200",
+      "current": 1,
+      "id": 4
     }
   ],
   "merch": [
@@ -111,6 +124,33 @@
       "stock": 20,
       "desc": "Hello123",
       "id": 4
+    },
+    {
+      "name": "new merch new event",
+      "price": "2000",
+      "eventId": 4,
+      "stock": "200",
+      "desc": "hello",
+      "id": 5,
+      "image": "http://res.cloudinary.com/dp9xqtibm/image/upload/v1703173767/rxhpmmfbfopccfk5a8vs.png"
+    },
+    {
+      "name": "new event new merch 2",
+      "price": "15000",
+      "eventId": 4,
+      "stock": "200",
+      "desc": "tentara",
+      "id": 6,
+      "image": "http://res.cloudinary.com/dp9xqtibm/image/upload/v1703173816/ojwoimkvknfz4f99tpmx.png"
+    },
+    {
+      "name": "test",
+      "image": "http://res.cloudinary.com/dp9xqtibm/image/upload/v1703173843/ypomlqjtakn6uiq4wrcq.png",
+      "price": "123",
+      "eventId": 4,
+      "stock": "10",
+      "desc": "202020",
+      "id": 7
     }
   ],
   "purchases": [
@@ -149,6 +189,12 @@
       "eventId": 2,
       "paymentStatus": false,
       "id": 2
+    },
+    {
+      "userId": 2,
+      "eventId": 4,
+      "paymentStatus": false,
+      "id": 3
     }
   ],
   "bookmarks": [
@@ -156,6 +202,16 @@
       "usersId": 3,
       "eventsId": 3,
       "id": 4
+    },
+    {
+      "usersId": 2,
+      "eventsId": 4,
+      "id": 6
+    },
+    {
+      "usersId": 2,
+      "eventsId": 2,
+      "id": 7
     }
   ]
 }

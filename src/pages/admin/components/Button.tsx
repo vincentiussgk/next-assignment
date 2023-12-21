@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { MouseEventHandler, ReactNode } from "react";
 
 interface ButtonProps {

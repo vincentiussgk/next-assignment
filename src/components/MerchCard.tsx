@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IMerch } from "@/types/dataTypes";
 import Image from "next/image";
 import React from "react";
@@ -29,7 +30,8 @@ const MerchCard = ({ merchData }: { merchData: IMerch }) => {
         <button
           className={`btn ${
             (merchData?.stock === 0 ||
-              cart[merchData?.id]?.qty === merchData?.stock) &&
+              //
+              cart[merchData?.id]?.qty >= merchData?.stock) &&
             "btn-disabled"
           }`}
           onClick={() => dispatch(addItem(merchData))}

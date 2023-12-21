@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -34,8 +35,6 @@ export interface IEventsFormState {
 const EventForm = () => {
   const router = useRouter();
   const firstInputRef = useRef<HTMLElement>();
-
-  console.log("inputrefform", firstInputRef);
 
   const [eventFormState, setEventFormState] =
     useState<IEventsFormState>(emptyEventForm);

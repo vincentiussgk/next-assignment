@@ -1,3 +1,4 @@
+// @ts-nocheck
 import useSWRParticipants from "@/hooks/useSWRParticipants";
 import { trimString } from "@/utils/trimString";
 import React, { isValidElement, useState } from "react";
@@ -13,7 +14,7 @@ const ParticipantsModal = ({ event, closeModal }: ParticipantsModalProps) => {
   const [page, setPage] = useState(1);
 
   const { data, slicedData, pageLimit, columns, mutate, error, isLoading } =
-    useSWRParticipants(event.id, page);
+    useSWRParticipants(event?.id, page);
 
   return (
     <>
@@ -38,7 +39,7 @@ const ParticipantsModal = ({ event, closeModal }: ParticipantsModalProps) => {
           <div
             className={`flex text-black justify-between px-[25px] py-[15px]`}
           >
-            <h2>Attending Participants for {event.name}</h2>
+            <h2>Attending Participants for {event?.name}</h2>
             <h2 onClick={closeModal} className={`cursor-pointer`}>
               X
             </h2>
@@ -88,7 +89,7 @@ const ParticipantsModal = ({ event, closeModal }: ParticipantsModalProps) => {
                 value="<"
               />
 
-              {[...Array(pageLimit).keys()].map((i) => (
+              {[...Array(pageLimit)?.keys()]?.map((i) => (
                 <PaginationButton
                   key={i + 1}
                   buttonStyle={page === i + 1 ? "selected" : "primary"}

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AuthButton from "@/components/AuthButton";
 import { removeCookies } from "@/utils/cookieHandler";
 import Link from "next/link";

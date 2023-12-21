@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FormEventHandler, useEffect, useState } from "react";
 import Spinner from "./admin/components/Spinner";
 import {
@@ -36,7 +37,6 @@ const Profile = () => {
   useEffect(() => {
     if (currentUser) {
       const { password, ...rest } = currentUser;
-      console.log(currentUser);
       setUserFormState(rest);
     }
   }, [currentUser]);

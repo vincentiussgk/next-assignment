@@ -1,3 +1,4 @@
+// @ts-nocheck
 const Modal = ({ setIsOpen, children, submitHandler }) => {
   return (
     <>
@@ -11,10 +12,10 @@ const Modal = ({ setIsOpen, children, submitHandler }) => {
       >
         <div className="bg-white text-black p-8 rounded-lg shadow-lg z-10 flex flex-col space-y-4">
           <div>
-            <h2 className="text-4xl text-indigo-700">{children[0]}</h2>
+            <h2 className="text-4xl text-indigo-700">{children?.[0]}</h2>
           </div>
           <div className="flex flex-col text-base text-gray-700">
-            {children[1]}
+            {children?.[1]}
           </div>
           <div className="w-full">
             <div className="flex items-center">

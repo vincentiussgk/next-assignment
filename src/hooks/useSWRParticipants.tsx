@@ -11,8 +11,6 @@ function useSWRParticipants(eventId: number, page: number, params?: string) {
     { revalidateOnFocus: false, revalidateOnMount: true }
   );
 
-  console.log(data);
-
   let columns;
 
   columns = [

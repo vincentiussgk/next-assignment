@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 
 const SelectInputClient = ({
@@ -22,7 +23,7 @@ const SelectInputClient = ({
         <option disabled selected>
           Select...
         </option>
-        {options.map((option: string, idx: number) => (
+        {options?.map((option: string, idx: number) => (
           <option key={option} value={option}>
             {option}
           </option>

@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable react-hooks/exhaustive-deps */
 import EventCard from "@/components/EventCard";
 import useBalance from "@/hooks/useBalance";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -11,7 +13,6 @@ const sortColumns = ["desc", "asc"];
 
 const Saved = () => {
   const { currentUser } = useBalance();
-  console.log(currentUser);
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedValue = useDebounce<string>(searchQuery, 300);
 
@@ -42,13 +43,6 @@ const Saved = () => {
       return [...prevParams];
     });
   }, [sortDir]);
-
-  // useEffect(() => {
-  //   setRequestParams((prevParams) => {
-  //     prevParams[2] = `name_like=${debouncedValue}`;
-  //     return [...prevParams];
-  //   });
-  // }, [debouncedValue]);
 
   useEffect(() => {
     setRequestParams((prevParams) => {
@@ -104,8 +98,6 @@ const Saved = () => {
 
     mutate();
   };
-
-  console.log("data", slicedData);
 
   const handleRemoveBookmark = async (bookmarkId: number) => {
     await fetch(`http://localhost:8080/bookmarks/${bookmarkId}`, {

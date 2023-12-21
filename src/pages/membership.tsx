@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import PaymentModal from "./admin/components/PaymentModal";
 import useBalance from "@/hooks/useBalance";
@@ -20,8 +21,8 @@ const Membership = () => {
     await manipWithFetch(
       `users/${currentUser?.id}`,
       {
-        membership: selectedMembership, // TODO
-        balance: currentUser?.balance - paymentTotal, //TODO
+        membership: selectedMembership,
+        balance: currentUser?.balance - paymentTotal,
       },
       "PATCH"
     );

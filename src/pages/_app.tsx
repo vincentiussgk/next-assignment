@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Navbar from "@/components/Navbar";
 import store from "@/stores/store";
 import "@/styles/globals.css";

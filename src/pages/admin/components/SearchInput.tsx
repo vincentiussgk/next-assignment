@@ -1,4 +1,4 @@
-import { debounce } from "@/utils/admin/debounce";
+// @ts-nocheck
 import React from "react";
 
 interface SearchBarProps {

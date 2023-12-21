@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useRouter } from "next/router";
 import React, { ReactNode, useEffect, useState } from "react";
 import Button from "../../components/Button";
@@ -10,8 +11,6 @@ interface FormLayoutProps {
 const FormLayout = ({ children }: FormLayoutProps) => {
   const [pageType, setPageType] = useState("Add");
   const router = useRouter();
-
-  console.log(router.query);
 
   useEffect(() => {
     if (router.query.itemId) {

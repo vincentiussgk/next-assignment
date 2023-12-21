@@ -23,8 +23,6 @@ const MerchOrderCard = ({ merch }: { merch: IMerchOrder }) => {
     dispatch(removeItem(merch));
   };
 
-  console.log(cart);
-
   return (
     <div
       className={`flex bg-white justify-between items-center px-[24px] py-[10px] rounded-lg shadow-lg hover:bg-zinc-100`}

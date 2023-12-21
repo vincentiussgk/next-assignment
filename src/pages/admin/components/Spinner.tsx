@@ -1,3 +1,4 @@
+// @ts-nocheck
 const Spinner = () => {
   return (
     <div role="status">

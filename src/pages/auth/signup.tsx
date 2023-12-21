@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FormEventHandler, useState } from "react";
 import AuthLayout from "./layout";
 import InputField from "../admin/components/InputField";

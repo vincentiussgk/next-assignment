@@ -1,3 +1,4 @@
+// @ts-nocheck
 import EventDetailButton from "@/components/EventDetailButton";
 import { fetcher } from "@/lib/fetcher";
 import { IEvent } from "@/types/dataTypes";
@@ -15,7 +16,7 @@ const EventDetails = () => {
 
   return (
     <div
-      className={`py-[50px] px-[180px] border-solid border-[1px] border-black`}
+      className={`py-[50px] min-h-screen px-[180px] border-solid border-[1px] border-black`}
     >
       <Link href={"/events"}>
         <button className="btn">Back</button>

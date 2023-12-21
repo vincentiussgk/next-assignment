@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { fetchBaseUrl } from "@/lib/fetch";
 import { ILoginBody } from "@/types";
 

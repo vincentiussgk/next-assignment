@@ -12,7 +12,7 @@ function useBalance() {
     if (cookieUserId) {
       setUserId(cookieUserId);
     }
-  }, []);
+  }, [cookieUserId]);
 
   const { data, error, isLoading, isValidating, mutate } = useSWR<IUser>(
     `users/${userId}`,

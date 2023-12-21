@@ -1,4 +1,4 @@
-export const datePickerToStringMonth = (date: number) => {
+export const datePickerToStringMonth = (date: string) => {
   if (!date) return "1 January 1970 00:00";
   let months = [
     "January",

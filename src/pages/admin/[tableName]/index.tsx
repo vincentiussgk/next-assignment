@@ -13,7 +13,6 @@ const Table = () => {
   const debouncedValue = useDebounce<string>(searchQuery, 300);
 
   useEffect(() => {
-    console.log("useEffect", router.query.tableName);
     setSearchQuery("");
   }, [router.query.tableName]);
 
