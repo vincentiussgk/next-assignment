@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080";
+const API_URL = "https://next-be-samuel.vercel.app";
 
 export const fetchBaseUrl = async (
   endpoint: string,

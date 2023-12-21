@@ -1,2 +1,2 @@
 export const fetcher = (url: string) =>
-  fetch(`http://localhost:8080/${url}`).then((res) => res.json());
+  fetch(`https://next-be-samuel.vercel.app/${url}`).then((res) => res.json());

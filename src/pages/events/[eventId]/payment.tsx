@@ -45,7 +45,7 @@ const Payment = () => {
 
       const purchaseItem = await (
         await fetch(
-          `http://localhost:8080/purchases?eventId=${router.query.eventId}&userId=${currentUser?.id}`
+          `https://next-be-samuel.vercel.app/purchases?eventId=${router.query.eventId}&userId=${currentUser?.id}`
         )
       ).json();
 

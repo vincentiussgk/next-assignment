@@ -104,7 +104,7 @@ const Events = () => {
   };
 
   const handleAddBookmark = async (eventId: number) => {
-    await fetch(`http://localhost:8080/bookmarks/`, {
+    await fetch(`https://next-be-samuel.vercel.app/bookmarks/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,7 +119,7 @@ const Events = () => {
   };
 
   const handleRemoveBookmark = async (bookmarkId: number) => {
-    await fetch(`http://localhost:8080/bookmarks/${bookmarkId}`, {
+    await fetch(`https://next-be-samuel.vercel.app/bookmarks/${bookmarkId}`, {
       method: "DELETE",
     });
 
